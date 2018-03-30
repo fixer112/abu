@@ -18,9 +18,7 @@ function abu1($string){
        $n = $string[$i];
        $ascii = ord($n);
        $hex = dechex($ascii);
-       //echo $ascii." = n \n";
        $ascii_len = (int) $ascii + $str_length;
-       //echo $ascii_len." = aslen \n";
        $hex_n = preg_replace('/[^0-9]/', '', $hex);
        $hex_a = preg_replace('/[^a-zA-Z]/', '', $hex);
        $hex_n_hex = dechex(ord($hex_n));

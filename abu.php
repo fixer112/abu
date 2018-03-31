@@ -44,4 +44,7 @@ function abu($string){
         return $encrypt_new;
     }
 }
+function abu_version(){
+  return "ABU ENCRYPTER V2.0 \n";
+}
 ?>

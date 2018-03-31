@@ -7,7 +7,7 @@
  * About = Encrypt word into a secured string using hex and ascii
  * Date = 09/03/2018
  */
-function abu1($string){
+function abu($string){
     //Declare Global variables
     $string = (string) $string;
     $str_length = strlen($string);

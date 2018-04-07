@@ -7,7 +7,8 @@
 ```
 <?php
 require('abu.php');
-$password = 'admin';
+$password = 'altechtic';
 $encryptpass = abu($password);
 ?>
+//returns 61608326113398125472114544108616
 ```

@@ -3,7 +3,7 @@
  * Develop Name = Altechtic Solutions
  * Website = altechtic.com.ng
  * Program = abu encrypter
- * Version = 1
+ * Version = 2.0
  * About = Encrypt word into a secured string using hex and ascii
  * Date = 09/03/2018
  */
@@ -13,6 +13,8 @@ function abu($string){
     $str_length = strlen($string);
     $encrypt="";
     $encrypt_n = "";
+    $hex_n_hex = "";
+    $hex_a_hex = "";
     
     for ($i=0;$i<=$str_length-1;$i++){
        $n = $string[$i];
@@ -21,8 +23,17 @@ function abu($string){
        $ascii_len = (int) $ascii + $str_length;
        $hex_n = preg_replace('/[^0-9]/', '', $hex);
        $hex_a = preg_replace('/[^a-zA-Z]/', '', $hex);
-       $hex_n_hex = dechex(ord($hex_n));
-       $hex_a_hex = dechex(ord($hex_a));
+       
+       foreach (str_split($hex_n) as $a){
+           
+           $hex_n_hex += dechex(ord($hex_n));
+       }
+       
+       foreach (str_split($hex_a) as $a){
+           
+           $hex_a_hex += dechex(ord($hex_a));
+       }
+       
        $encrypt_n = $hex_a.$ascii_len.$hex_n_hex;
        $encrypt .= $encrypt_n;
        
@@ -42,6 +53,7 @@ function abu($string){
         $encrypt_new = $encrypt_added.$encrypt_extract;
         
         return $encrypt_new;
+       
     }
 }
 function abu_version(){

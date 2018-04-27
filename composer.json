@@ -1,0 +1,19 @@
+{
+    "name": "fixer112/abu",
+    "description": "one way php encrypter by Altechtic Solutions",
+    "type": "project",
+    "keywords": ["abu", "encrypt", "password"],
+    "homepage": "http://altechtic.com.ng",
+    "license": "GPL-3.0+",
+    "authors": [
+        {
+            "name": "Abubakar Lawal",
+            "email": "abula3003@gmail.com"
+        },
+    ],
+    "require": {
+        "php": ">=5.*"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

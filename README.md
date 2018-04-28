@@ -2,13 +2,26 @@
 * Use to encrypt string/password
 * Encrypt word into a secured string using hex and ascii
 
-## How To Use
+## How To Use with composer
+
+```
+ "require": {
+		"fixer112/abu": "dev-master"
+    }
+```
 
 ```
 <?php
-require('abu.php');
-$password = 'altechtic';
-$encryptpass = abu($password);
+//require autoload file
+require 'vendor/autoload.php';
+
+use Abu\abu;
+
+$abu = new abu();
+echo $abu->encrypt('abu')."<br>";
+echo $abu->version();
 ?>
-//returns 61608326113398125472114544108616
+
+//10072101144120218
+//2.0.1
 ```

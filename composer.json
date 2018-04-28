@@ -1,4 +1,32 @@
 {
     "name": "fixer112/abu",
-    "description": "one way php encrypter by Altechtic Solutions"
+    "type": "library",
+    "description": "One way php encrypter by Altechtic Solutions.",
+    "keywords": [
+        "encrypt",
+        "password",
+        "abu"
+    ],
+    "homepage": "http://altechtic.com.ng",
+    "support": {
+        "issues": "https://github.com/fixer112/abu/issues",
+        "source": "https://github.com/fixer112/abu"
+    },
+    "license": "GPL-3.0+",
+    "authors": [
+        {
+            "name": "Abubakar Lawal",
+            "email": "abula3003@gmail.com",
+            "homepage": "http://github.com/fixer112"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "": "src/"
+        }
+    }
 }
+

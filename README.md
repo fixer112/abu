@@ -6,7 +6,7 @@
 
 ```
  "require": {
-		"fixer112/abu": "dev-master"
+		"fixer112/abu": "2.0.*"
     }
 ```
 

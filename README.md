@@ -16,12 +16,17 @@
 require 'vendor/autoload.php';
 
 use Abu\abu;
+/*Default max encrypt length is 60
+  To change max encrypt length: abu::encrypt($password, 70)
+  The higher the value the more secured
+  Always check for version before encrpting or checking encrpted string
+*/
 
-$abu = new abu();
-echo $abu->encrypt('abu')."<br>";
-echo $abu->version();
+$password = 'pass@string';
+if (abu::version()=='2.1.0') {
+	if (abu::encrypt('$password', 50) == '5894340128377128414f120450123487123519109555109589') {
+		//execute code
+	}
+}
 ?>
-
-//10072101144120218
-//2.0.1
 ```

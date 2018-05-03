@@ -3,16 +3,16 @@
  * Develop Name = Altechtic Solutions
  * Website = altechtic.com.ng
  * Program = abu encrypter
- * Version = 2.0.1
+ * Version = 2.1.0
  * About = Encrypt word into a secured string using hex and ascii
- * Date = 09/03/2018
+ * Date = 03/05/2018
  */
 
 namespace Abu;
 
 class Abu{
 
-  public function encrypt($string){
+  public static function encrypt($string, $len = 60){
     //Declare Global variables
     $string = (string) $string;
     $str_length = strlen($string);
@@ -31,28 +31,22 @@ class Abu{
        
        foreach (str_split($hex_n) as $a){
            
-           $hex_n_hex += dechex(ord($hex_n));
-       }
-       
-       foreach (str_split($hex_a) as $a){
-           
-           $hex_a_hex += dechex(ord($hex_a));
-       }
+        $hex_n_hex += dechex(ord($a));
        
        $encrypt_n = $hex_a.$ascii_len.$hex_n_hex;
        $encrypt .= $encrypt_n;
-       
+       }
     }
-    if (strlen($encrypt) <=32){
+    if (strlen($encrypt) <=$len){
         return $encrypt;
-    }elseif (strlen($encrypt)>32){
+    }elseif (strlen($encrypt)>$len){
         $encrypt_a = preg_replace('/[^0-9]/', '', $encrypt);
         $encrypt_array = str_split($encrypt_a, 5);
         foreach ($encrypt_array as $value){
         $encrypt_added =+$value; 
         }
         $encrypt_len = strlen($encrypt);
-        $encrypt_added_len= 32-strlen($encrypt_added);
+        $encrypt_added_len= $len-strlen($encrypt_added);
         $encrypt_new_len = $encrypt_len - $encrypt_added_len;
         $encrypt_extract = substr($encrypt,($encrypt_new_len));
         $encrypt_new = $encrypt_added.$encrypt_extract;
@@ -62,8 +56,8 @@ class Abu{
     }
 }
 
-public function version(){
-  return "2.0.1";
+public static function version(){
+  return "2.1.0";
 }
 
 }

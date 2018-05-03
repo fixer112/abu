@@ -11,6 +11,7 @@
 ```
 * Default max encrypt length is 60
 * To change max encrypt length: abu::encrypt($password, 70)
+* abu::encrypt('$password', 50) is not abu::encrypt('$password') or abu::encrypt('$password', 70)
 * The higher the value the more secured
 * Always check for version before encrpting or checking encrpted string
 
